@@ -9,7 +9,7 @@ The system includes authentication, activity logging, and file-based data storag
 
 ### Authentication System
 - Admin login with username and password
-- Password hashing for security
+- Passwords stored as djb2 hashes (a simple teaching hash, not secure for real credentials)
 - Automatic admin account initialization
 
 ### Flight Management
@@ -54,6 +54,21 @@ All important system operations are recorded in a log file including:
 | aircrafts.dat | Aircraft fleet data |
 | airline_users.dat | User authentication data |
 | airline_logs.txt | System activity logs |
+
+## Build and Run
+
+Needs a C compiler (gcc or clang).
+
+```bash
+gcc airline_management_system.c -o airline_management_system -lm
+./airline_management_system
+```
+
+On macOS, `-lm` is optional. The program creates its `.dat` data files and log file on first run.
+
+## Project Report
+
+Design and feature walkthrough: [docs/ARFMS-project-report.pdf](docs/ARFMS-project-report.pdf)
 
 ## Default Admin Login
 
